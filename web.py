@@ -1,8 +1,11 @@
 import gradio
 import openai
-import config
 import subprocess
-openai.api_key = config.OPENAI_API_KEY
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 messages = [{"role": "system", "content": "Hello nice to meet you!"}]
 
